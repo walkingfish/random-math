@@ -50,6 +50,25 @@
 
 			}
 		}
+		
+		function displayEquation(){
+			$equation = array( giveMeANumber(), giveMeAnOperator(), giveMeANumber(), giveMeAnOperator(), giveMeANumber() );
+			$result = 0;
+			print_r( $equation );
+			echo "<p>";
+			foreach ( $equation as $element ){	
+				echo $element . " ";
+			}
+			
+			echo "</p>";
+			$result = implode($equation);
+			echo "<p>The equation: ".$result."</p>";
+			eval('$result='.$result.';');
+			echo "<p>Result: ".$result."</p>";
+		}
+		
+		displayEquation();
 	?>
+	
 </body>
 </html>
